@@ -54,7 +54,7 @@ var generatePassword = function () {
   var passwordLength = "";
 
   while (passwordLength === "" || passwordLength === null || passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    passwordLength = prompt("Please enter a number 8 through 128");
+    passwordLength = prompt("How long would you like this password to be? Please enter a number 8 through 128");
   }
 
   var passwordLowercase = confirmEntry("Would you like this password to include lowercase letters? Y/N");
