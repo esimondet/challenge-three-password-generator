@@ -1,14 +1,14 @@
 // regex to confirm the presence of lowercase characters in our password if desired
-let lowercaseRegex =  /.*[a-z]+.*/;
+let lowercaseRegex = /.*[a-z]+.*/;
 
 // regex to confirm the presence of uppercase characters in our password if desired
-let uppercaseRegex =  /.*[A-Z]+.*/;
+let uppercaseRegex = /.*[A-Z]+.*/;
 
 // regex to confirm the presence of numeric characters in our password if desired
-let numericRegex =  /.*[0-9]+.*/;
+let numericRegex = /.*[0-9]+.*/;
 
 // regex to confirm the presence of special characters in our password if desired
-let specialRegex =  /.*[ !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~]+.*/;
+let specialRegex = /.*[ !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~]+.*/;
 
 // constant string for lowercase letters
 const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -39,7 +39,7 @@ var confirmEntry = function (userPrompt) {
 }
 
 //function to build password
-var buildPassword = function(referenceString, passwordLength) {
+var buildPassword = function (referenceString, passwordLength) {
   var generatedPassword = "";
 
   while (generatedPassword.length < passwordLength) {
@@ -87,8 +87,9 @@ var generatePassword = function () {
   return generatedPassword;
 }
 
-//function to validate the presence of desired characters
-var passwordValidate = function(passwordLowercase, passwordUppercase, passwordNumeric, passwordSpecial, generatedPassword) {
+//function to test built passwords against applicable regex to verify the presence of at least one of the desired character sets
+//in my current workplace I have used regex in PowerShell to document a text document and pull necessary data to be sent
+var passwordValidate = function (passwordLowercase, passwordUppercase, passwordNumeric, passwordSpecial, generatedPassword) {
   var isValid = true;
 
   if (passwordLowercase === "Y" && !lowercaseRegex.test(generatedPassword)) isValid = false;
